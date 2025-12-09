@@ -1,0 +1,389 @@
+/* Custom properties (CSS Variables) for colors */
+:root {
+    --bg-color: #0d1127; /* Dark Navy Blue background */
+    --primary-color: #0b1535; /* Slightly lighter background for cards/sections */
+    --text-color: #ffffff; /* White text */
+    --highlight-color: #49b6ff; /* Bright Blue for accents/glow */
+    --secondary-color: #a0a0a0; /* Grey for minor text */
+    --button-glow: 0 0 10px rgba(73, 182, 255, 0.7), 0 0 20px rgba(73, 182, 255, 0.4);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Using a common font */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 80px 10%;
+    min-height: 100vh;
+}
+
+hr {
+    border: none;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.highlight-text {
+    color: var(--highlight-color);
+}
+
+/* --------------------
+   Navigation Bar
+   -------------------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.navbar a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--highlight-color);
+}
+
+/* --------------------
+   Hero Section (Home)
+   -------------------- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 100px; /* Offset for fixed header */
+    gap: 50px;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content .greeting {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.hero-content .tagline {
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--highlight-color);
+    box-shadow: 0 0 20px rgba(73, 182, 255, 0.6);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.social-links {
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--highlight-color);
+    border-radius: 50%;
+    font-size: 18px;
+    color: var(--highlight-color);
+    text-decoration: none;
+    margin-right: 12px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--highlight-color);
+    color: var(--bg-color);
+    box-shadow: var(--button-glow);
+}
+
+/* Button Styling (Used for CTA and Read More) */
+.cta-button, .read-more-button {
+    background-color: var(--highlight-color);
+    color: var(--bg-color);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: box-shadow 0.3s, background-color 0.3s;
+    box-shadow: var(--button-glow);
+}
+
+.cta-button:hover, .read-more-button:hover {
+    background-color: #5cc2ff; /* Slightly lighter on hover */
+    box-shadow: 0 0 15px rgba(73, 182, 255, 1), 0 0 30px rgba(73, 182, 255, 0.8);
+}
+
+/* --------------------
+   Services Section
+   -------------------- */
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.service-card {
+    flex: 1;
+    background-color: var(--primary-color);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), var(--button-glow);
+}
+
+.icon-box {
+    font-size: 3rem;
+    color: var(--highlight-color);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    min-height: 80px; /* Ensure cards have similar height */
+}
+
+.read-more-button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+/* --------------------
+   Skills Section
+   -------------------- */
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.skills-group {
+    flex: 1;
+    max-width: 45%;
+}
+
+.skill-item {
+    margin-bottom: 25px;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Progress Bar Styling */
+.progress-bar-bg {
+    background-color: var(--primary-color);
+    height: 15px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--highlight-color);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+    position: relative;
+    box-shadow: var(--button-glow);
+}
+
+.progress-bar::after {
+    content: attr(data-level);
+    position: absolute;
+    top: -5px; /* Adjust as needed */
+    right: 5px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* --------------------
+   Contact Section
+   -------------------- */
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form .form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--highlight-color);
+    box-shadow: 0 0 5px rgba(73, 182, 255, 0.7);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form ::placeholder {
+    color: var(--secondary-color);
+    opacity: 0.7;
+}
+
+.send-message-button {
+    align-self: center;
+    margin-top: 10px;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
+
+/* --------------------
+   Media Queries for Responsiveness (Optional but recommended)
+   -------------------- */
+@media (max-width: 1200px) {
+    section {
+        padding: 60px 5%;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content {
+        max-width: 100%;
+        order: 2;
+    }
+    .hero-image {
+        margin-top: 20px;
+        order: 1;
+    }
+    .services-container {
+        flex-direction: column;
+    }
+    .service-card p {
+        min-height: auto;
+    }
+    .skills-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .skills-group {
+        max-width: 100%;
+    }
+    .contact-form .form-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+    .navbar nav {
+        display: none; /* Hide nav links on very small screens for simplicity */
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
